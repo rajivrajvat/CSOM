@@ -1,0 +1,10 @@
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\bin\Debug\GetListOfLists.exe.config
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\bin\Debug\GetListOfLists.exe
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\bin\Debug\GetListOfLists.pdb
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\bin\Debug\Microsoft.SharePoint.Client.dll
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\bin\Debug\Microsoft.SharePoint.Client.xml
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\bin\Debug\Microsoft.SharePoint.Client.Runtime.xml
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\obj\Debug\GetListOfLists.exe
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\obj\Debug\GetListOfLists.pdb
+g:\SPS2013P_II\1_CSOM\GetListOfLists\GetListOfLists\obj\Debug\GetListOfLists.csprojResolveAssemblyReference.cache
