@@ -1,0 +1,9 @@
+g:\SPS2013P_II\1_CSOM\GetFieldsOfAList\GetFieldsOfAList\bin\Debug\GetFieldsOfAList.exe.config
+g:\SPS2013P_II\1_CSOM\GetFieldsOfAList\GetFieldsOfAList\bin\Debug\GetFieldsOfAList.exe
+g:\SPS2013P_II\1_CSOM\GetFieldsOfAList\GetFieldsOfAList\bin\Debug\GetFieldsOfAList.pdb
+g:\SPS2013P_II\1_CSOM\GetFieldsOfAList\GetFieldsOfAList\bin\Debug\Microsoft.SharePoint.Client.dll
+g:\SPS2013P_II\1_CSOM\GetFieldsOfAList\GetFieldsOfAList\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+g:\SPS2013P_II\1_CSOM\GetFieldsOfAList\GetFieldsOfAList\bin\Debug\Microsoft.SharePoint.Client.xml
+g:\SPS2013P_II\1_CSOM\GetFieldsOfAList\GetFieldsOfAList\bin\Debug\Microsoft.SharePoint.Client.Runtime.xml
+g:\SPS2013P_II\1_CSOM\GetFieldsOfAList\GetFieldsOfAList\obj\Debug\GetFieldsOfAList.exe
+g:\SPS2013P_II\1_CSOM\GetFieldsOfAList\GetFieldsOfAList\obj\Debug\GetFieldsOfAList.pdb
