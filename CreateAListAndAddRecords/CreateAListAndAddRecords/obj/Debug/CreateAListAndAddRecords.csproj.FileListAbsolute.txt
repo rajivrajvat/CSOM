@@ -1,0 +1,9 @@
+g:\SPS2013P_II\1_CSOM\CreateAListAndAddRecords\CreateAListAndAddRecords\bin\Debug\CreateAListAndAddRecords.exe.config
+g:\SPS2013P_II\1_CSOM\CreateAListAndAddRecords\CreateAListAndAddRecords\bin\Debug\CreateAListAndAddRecords.exe
+g:\SPS2013P_II\1_CSOM\CreateAListAndAddRecords\CreateAListAndAddRecords\bin\Debug\CreateAListAndAddRecords.pdb
+g:\SPS2013P_II\1_CSOM\CreateAListAndAddRecords\CreateAListAndAddRecords\bin\Debug\Microsoft.SharePoint.Client.dll
+g:\SPS2013P_II\1_CSOM\CreateAListAndAddRecords\CreateAListAndAddRecords\bin\Debug\Microsoft.SharePoint.Client.Runtime.dll
+g:\SPS2013P_II\1_CSOM\CreateAListAndAddRecords\CreateAListAndAddRecords\bin\Debug\Microsoft.SharePoint.Client.xml
+g:\SPS2013P_II\1_CSOM\CreateAListAndAddRecords\CreateAListAndAddRecords\bin\Debug\Microsoft.SharePoint.Client.Runtime.xml
+g:\SPS2013P_II\1_CSOM\CreateAListAndAddRecords\CreateAListAndAddRecords\obj\Debug\CreateAListAndAddRecords.exe
+g:\SPS2013P_II\1_CSOM\CreateAListAndAddRecords\CreateAListAndAddRecords\obj\Debug\CreateAListAndAddRecords.pdb
