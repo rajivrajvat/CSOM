@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.OleDb;
+using System.Linq;
+using System.Security;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.SharePoint.Client;
+
+namespace ReadExcel
+{
+    internal class Program
+    {
+        static void ImportExcel(string fileName, string fileExt)
+        {
+
+            string conn = string.Empty;
+            DataTable dtexcel = new DataTable();
+            if (fileExt.CompareTo(".xls") == 0)
+                conn = @"provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + fileName + ";Extended Properties='Excel 8.0;HRD=Yes;IMEX=1;';"; //for below excel 2007  
+            else
+                conn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileName + ";Extended Properties='Excel 12.0;HDR=Yes;IMEX=1;';"; //for above excel 2007  
+            using (OleDbConnection con = new OleDbConnection(conn))
+            {
+                try
+                {
+                    string _TableName = string.Empty;
+                    con.Open();
+                    DataTable dt = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        _TableName = Convert.ToString(row["TABLE_NAME"]).Replace("'", "");
+                        Console.WriteLine(_TableName);
+                    }
+                    OleDbDataAdapter oleAdpt = new OleDbDataAdapter("select * from [" + _TableName + "]", con); //here we read data from sheet1  
+                    oleAdpt.Fill(dtexcel); //fill excel data into dataTable  
+
+                }
+                catch (Exception ex) { }
+            }
+
+            if (dtexcel.Rows.Count > 0)
+                using (ClientContext ctx = new ClientContext("https://v8wyq.sharepoint.com/sites/firstsite/"))
+                {
+                   ctx.AuthenticationMode = ClientAuthenticationMode.Default;
+                SecureString securePassword = new SecureString();
+                foreach (char c in "Amitkumarverma@123")
+                {
+                    securePassword.AppendChar(c);
+                }
+                ctx.Credentials = new SharePointOnlineCredentials("Administrator@v8wyq.onmicrosoft.com", securePassword);
+                Web web = ctx.Web;
+                List projectList = ctx.Web.Lists.GetByTitle("Emplyoee");
+                    for (int i = 0; i < dtexcel.Rows.Count; i++)
+                    {
+                        try
+                        {
+                            ListItemCreationInformation _NewItemCI = new ListItemCreationInformation();
+                            ListItem _NewItem = projectList.AddItem(_NewItemCI);
+                            _NewItem["Title"] = Convert.ToString(dtexcel.Rows[i][0]);
+                            _NewItem.Update();
+                            ctx.ExecuteQuery();
+                            Console.WriteLine(i + 1 + "item Created");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine( " - " + ex.Message);
+                        }                                                   
+
+                    
+                    }
+
+
+                }
+
+
+        }
+        static void Main(string[] args)
+        {            
+            ImportExcel("F:\\TestExcel.xlsx", ".xlsx");
+        }
+        
+    }
+}
+
