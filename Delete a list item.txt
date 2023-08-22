@@ -1,0 +1,12 @@
+// Starting with ClientContext, the constructor requires a URL to the
+// server running SharePoint.
+ClientContext context = new ClientContext("https://{site_url}");
+
+// Assume that the web has a list named "Announcements".
+List announcementsList = context.Web.Lists.GetByTitle("Announcements");
+
+// Assume that there is a list item with ID=2.
+ListItem listItem = announcementsList.GetItemById(2);
+listItem.DeleteObject();
+
+context.ExecuteQuery(); }

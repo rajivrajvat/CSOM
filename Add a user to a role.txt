@@ -1,0 +1,14 @@
+// Starting with ClientContext, the constructor requires a URL to the
+// server running SharePoint.
+ClientContext context = new ClientContext("https://{site_url}");
+
+// Assume that we have a SiteUser with Login user.
+Principal user = context.Web.SiteUsers.GetByLoginName(@"domain\user");
+
+// Assume that we have a RoleDefinition named "Read".
+RoleDefinition readDef = context.Web.RoleDefinitions.GetByName("Read");
+RoleDefinitionBindingCollection roleDefCollection = new RoleDefinitionBindingCollection(context);
+roleDefCollection.Add(readDef);
+RoleAssignment newRoleAssignment = context.Web.RoleAssignments.Add(user, roleDefCollection);
+
+context.ExecuteQuery();

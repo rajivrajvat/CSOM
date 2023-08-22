@@ -1,0 +1,33 @@
+// Starting with ClientContext, the constructor requires a URL to the
+// server running SharePoint.
+ClientContext context = new ClientContext("https://{site_url}");
+
+ExceptionHandlingScope scope = new ExceptionHandlingScope(context);
+
+using (scope.StartScope())
+{
+  using (scope.StartTry())
+  {
+    List fooList = context.Web.Lists.GetByTitle("Sample");
+    fooList.Description = "In Try Block";
+    fooList.Update();
+  }
+  using (scope.StartCatch())
+  {
+    // Assume that if there's an exception,
+    // it can be only because there was no "Sample" list.
+    ListCreationInformation listCreateInfo = new ListCreationInformation();
+    listCreateInfo.Title = "Sample";
+    listCreateInfo.Description = "In Catch Block";
+    listCreateInfo.TemplateType = (int)ListTemplateType.Announcements;
+    List fooList = context.Web.Lists.Add(listCreateInfo);
+  }
+  using (scope.StartFinally())
+  {
+    List fooList = context.Web.Lists.GetByTitle("Sample");
+    fooList.EnableFolderCreation = true;
+    fooList.Update();
+  }
+}
+
+context.ExecuteQuery();

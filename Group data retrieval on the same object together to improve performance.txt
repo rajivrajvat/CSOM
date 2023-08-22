@@ -1,0 +1,20 @@
+static void Method1()
+{
+  ClientContext context = new ClientContext("https://{site_url}");
+  Web web = context.Web;
+  SP.List list = web.Lists.GetByTitle("Announcements");
+  context.Load(web, w => w.Title, w => w.Description);
+  context.Load(list, l => l.Description);
+  context.ExecuteQuery();
+}
+
+static void Method2()
+{
+  ClientContext context = new ClientContext("https://{site_url}");
+  Web web = context.Web;
+  SP.List list = web.Lists.GetByTitle("Announcements");
+  context.Load(web, w => w.Title);
+  context.Load(list, l => l.Description);
+  context.Load(web, w => w.Description);
+  context.ExecuteQuery();
+}

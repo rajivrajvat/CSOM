@@ -1,0 +1,23 @@
+// Starting with ClientContext, the constructor requires a URL to the
+// server running SharePoint.
+ClientContext context = new ClientContext("https://{site_url}");
+
+SP.List list = context.Web.GetCatalog(ListTemplateType.WebPartCatalog);
+BasePermissions perm = new BasePermissions();
+perm.Set(PermissionKind.ManageLists);
+
+ConditionalScope scope =
+    new ConditionalScope(context,
+                         () => list.ServerObjectIsNull &amp;&amp; context.Web.DoesUserHavePermissions(perm).Value);
+using (scope.StartScope())
+{
+  context.Load(list, l => l.Title);
+}
+context.ExecuteQuery();
+
+label1.Text = scope.TestResult.Value;
+
+if (scope.TestResult.Value)
+{
+  label1.Text = list.Title;
+}
