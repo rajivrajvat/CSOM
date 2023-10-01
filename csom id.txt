@@ -1,0 +1,11 @@
+The app identifier has been successfully created.
+Client Id:  	828dfd52-1bec-4f05-a335-290c35ede9d7
+Client Secret:  	k13vXBJzLv9QeoQFzink28NsKdMXlI2PE6S4/d1HUOA=
+Title:  	CSOM Testing
+App Domain:  	rajiv.com
+Redirect URI:  	https://www.rajiv.com/default.aspx
+
+<AppPermissionRequests AllowAppOnlyPolicy="true">
+    <AppPermissionRequest Scope="http://sharepoint/content/tenant" 
+     Right="FullControl" />
+ </AppPermissionRequests>
